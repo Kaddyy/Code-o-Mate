@@ -1,4 +1,0 @@
-Hallo Kaddy
-
-
-Jetzt schreib ich in Git
