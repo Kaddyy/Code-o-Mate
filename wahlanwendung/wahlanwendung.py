@@ -1,11 +1,15 @@
-from flask import Flask, render_template
-
-app = Flask(__name__)
+from flask import render_template
+from wahlanwendung import app, db, models
 
 #das ist unsere erste Seite
 @app.route('/')
 def welcome():
     return render_template('startseite.html')
 
-if __name__ == '__main__':
-    app.run()
+@app.route('/fragenkatalog')
+def fragenkatalog():
+    return render_template('fragenkatalog.html')
+
+@app.route('/auswertung')
+def auswertung():
+    return render_template('auswertung.html')

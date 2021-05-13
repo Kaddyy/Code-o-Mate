@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form class="fragencontainer">
+    <p>Hier wird eine Frage gestellt!</p>
+    <ul>
+        <li>
+            <input type="radio" name="answer" value="a01_01" id="a01_1" checked>
+            <label for="a01_1">Antwort 1</label>
+        </li>
+         <li>
+            <input type="radio" name="answer" id="a01_2">
+            <label for="a01_2">Antwort 2</label>
+        </li>
+         <li>
+            <input type="radio" name="answer" id="a01_3">
+            <label for="a01_3">Antwort 3</label>
+        </li>
+    </ul>
+    <button type="submit">Weiter</button>
+</form>
+
+<div>
+    <a href="{{ url_for('auswertung') }}"><button type="button">Los gehts!</button></a>
+</div>
+
+{% endblock %}

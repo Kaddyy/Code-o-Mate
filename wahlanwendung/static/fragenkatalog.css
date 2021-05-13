@@ -1,0 +1,8 @@
+.fragencontainer {
+    width: 15em;
+    border: 5px solid #333;
+    padding: 8px 12px;
+    background-color: #333333;
+    color: orange;
+    text-align: center;
+}

@@ -1,11 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Code-o-Mat!</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-<h1>Willkommen zum Code-o-Mat!<h1>
-</body>
-</html>
+{% block content %}
+
+<h2>Willkommen zum Code-o-Mate!</h2>
+
+<div class="willkommenstext">
+    <p>
+        Hallo Ihr da draußen! Werdet Code-o-Mater!<br>
+        Der Code-o-Mate wird euch einige Fragen stellen und am Ende die für euch zutreffenste Programmiersprache ermitteln.
+    </p>
+</div>
+
+<div>
+    <a href="{{ url_for('fragenkatalog') }}"><button type="button">Los gehts!</button></a>
+</div>
+
+{% endblock %}
