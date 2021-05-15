@@ -1,6 +1,6 @@
 from wahlanwendung import app
-from wahlanwendung.models import progr_sprache
+from wahlanwendung.models import progr_spr
 
-app.run(host='0.0.0.0', debug=True)
+app.run(debug=True)
 
-progr_sprache.query.all()
+#progr_sprache.query.all()
