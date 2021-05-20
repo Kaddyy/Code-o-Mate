@@ -2,24 +2,28 @@
 
 {% block content %}
 
-<form class="fragencontainer">
-    <p>Hier wird eine Frage gestellt!</p>
-    <ul>
+<p id="frageNormal"></p>
+    <ul id="antwortListe" action="/fragenkatalog" method="post" class="fragencontainer">
         <li>
             <input type="radio" name="answer" value="a01_01" id="a01_1" checked>
             <label for="a01_1">Antwort 1</label>
         </li>
          <li>
-            <input type="radio" name="answer" id="a01_2">
+            <input type="radio" name="answer" value="a01_02" id="a01_2">
             <label for="a01_2">Antwort 2</label>
         </li>
          <li>
-            <input type="radio" name="answer" id="a01_3">
+            <input type="radio" name="answer" value="a01_03" id="a01_3">
             <label for="a01_3">Antwort 3</label>
         </li>
+        <li>
+            <input type="radio" name="answer" value="a01_04" id="a01_4">
+            <label for="a01_4">Antwort 4</label>
+        </li>
     </ul>
-    <button type="submit">Weiter</button>
-</form>
+    <button id="weiterbtn" onclick="neueFrage()">Weiter</button>
+
+<script type="text/javascript" src="{{ url_for('static', filename='fragenkatalog.js') }}"></script>
 
 <div>
     <a href="{{ url_for('auswertung') }}"><button type="button">Los gehts!</button>
