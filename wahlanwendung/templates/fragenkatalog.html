@@ -2,15 +2,15 @@
 
 {% block content %}
 
-<p id="frageNormal"></p>
+<p id="frageNormal">Ist es deine erste Programmiersprache, welche du lernen möchtest?</p>
     <ul id="antwortListe" action="/fragenkatalog" method="post" class="fragencontainer">
         <li>
             <input type="radio" name="answer" value="a01_01" id="a01_1" checked>
-            <label for="a01_3" id="label_01"></label>
+            <label for="a01_3" id="label_01">Ja</label>
         </li>
          <li>
             <input type="radio" name="answer" value="a01_02" id="a01_2">
-            <label for="a01_3" id="label_02"></label>
+            <label for="a01_3" id="label_02">Nein</label>
         </li>
          <li>
             <input type="radio" name="answer" value="a01_03" id="a01_3">
@@ -21,10 +21,12 @@
             <label for="a01_4" id="label_04">Antwort 4</label>
         </li>
     </ul>
-    <button id="weiterbtn" onclick="neueFrage()">Weiter</button>
+
+    <button id="weiterbtn" onclick="ladeFrage()">Weiter</button>
 
 <script type="text/javascript">
-    var fragen = {{ data | tojson }};
+    var fragen = {{ dataFrage | tojson }};
+    var antworten = {{ dataAntwort | tojson }};
 </script>
 
 <script type="text/javascript" src="{{ url_for('static', filename='fragenkatalog.js') }}"></script>

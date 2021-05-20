@@ -11,8 +11,10 @@ def welcome():
 
 @app.route('/fragenkatalog', methods=["POST","GET"])
 def fragenkatalog():
-    data = {'fragennr': 1, 'frage': 'Ist es deine erste Programmiersprache, welche du lernen möchtest?'}
-    return render_template('fragenkatalog.html', data=data)
+    dataFrage = {'fragennr': 2, 'frage': 'Hier steht eine Frage'}
+    dataAntwort = {'antwort1': 'ja', 'antwort2': 'nein'}
+    return render_template('fragenkatalog.html', dataFrage=dataFrage, dataAntwort=dataAntwort)
+
 """ if request.method == "POST":
         antwort = request.form["answer"]
        if antwort == "a01_01":
