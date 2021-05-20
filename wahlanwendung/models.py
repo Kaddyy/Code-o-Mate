@@ -3,7 +3,7 @@ from wahlanwendung import db
 class fragenkat(db.Model):
     __table_args__ = {'extend_existing': True}
     pk_frage_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    fragennr = db.Column(db.String, unique=True, nullable=False)
+    fragennr = db.Column(db.Integer, unique=True, nullable=False)
     frage = db.Column(db.String, unique=False, nullable=False)
 
 
