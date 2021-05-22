@@ -28,16 +28,9 @@
 
     <button type="submit" id="weiterbtn">Weiter</button>
 </form>
-<script type="text/javascript">
-    var fragen = {{ dataFrage | tojson }};
-    var antworten = {{ dataAntwort | tojson }};
-</script>
-
-<script type="text/javascript" src="{{ url_for('static', filename='fragenkatalog.js') }}"></script>
-
 
 <div>
-    <a href="{{ url_for('auswertung') }}"><button type="button">Los gehts!</button>
+    <a href="{{ url_for('auswertung') }}"><button type="button">Auf geht's zur Auswertung!</button>
     </a>
 </div>
 

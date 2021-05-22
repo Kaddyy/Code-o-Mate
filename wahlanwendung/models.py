@@ -9,6 +9,7 @@ class fragenkat(db.Model):
     antwort2 = db.Column(db.String, unique=False, nullable=False)
     antwort3 = db.Column(db.String, unique=False, nullable=True)
     antwort4 = db.Column(db.String, unique=False, nullable=True)
+    nachfolger = db.Column(db.Integer, unique=False, nullable=False)
 
 
 class antwortkat(db.Model):

@@ -1,12 +1,11 @@
+alert("Ich bin JSSS");
 function checkTonio(){
-    alert('Ich bin Tonio');
-    checkAnswer3 = antworten.antwort3;
-
-    if (element.innerText !=  null){
-        element.innerText = 'Tonio';
-        alert('Ich bin die Funktion');
-        document.getElementById('optAnswer3').style.display = "none";
+    //checkAnswer3 = antworten.antwort3;
+    document.querySelector("#label_03").innerText = element;
+    if (element == "Ulla"){
+        document.querySelector("#label_03").innerText = 'Tonio';
+        //document.getElementById('optAnswer3').style.display = "none";
     } else {
-        element.innerText = 'Kaddy';
+        document.querySelector("#label_03").innerText = "Kaddy";
     }
 }
