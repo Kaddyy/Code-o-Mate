@@ -2,34 +2,39 @@
 
 {% block content %}
 
-<p id="frageNormal">Ist es deine erste Programmiersprache, welche du lernen möchtest?</p>
+<p>{{ dataFrage.frage }}</p>
+
+<form method="post">
     <ul id="antwortListe" action="/fragenkatalog" method="post" class="fragencontainer">
         <li>
             <input type="radio" name="answer" value="a01_01" id="a01_1" checked>
-            <label for="a01_3" id="label_01">Ja</label>
+            <label for="a01_3" id="label_01">{{ dataAntwort.antwort1 }}</label>
         </li>
          <li>
             <input type="radio" name="answer" value="a01_02" id="a01_2">
-            <label for="a01_3" id="label_02">Nein</label>
+            <label for="a01_3" id="label_02">{{ dataAntwort.antwort2 }}</label>
         </li>
+        <div class="optionalAnswers" id="optAnswer3">
          <li>
             <input type="radio" name="answer" value="a01_03" id="a01_3">
-            <label for="a01_3" id="label_03"></label>
+            <label for="a01_3" id="label_03">{{ dataAntwort.antwort3 }}</label>
         </li>
+        </div>
         <li>
             <input type="radio" name="answer" value="a01_04" id="a01_4">
-            <label for="a01_4" id="label_04">Antwort 4</label>
+            <label for="a01_4" id="label_04">{{ dataAntwort.antwort4 }}</label>
         </li>
     </ul>
 
-    <button id="weiterbtn" onclick="ladeFrage()">Weiter</button>
-
+    <button type="submit" id="weiterbtn">Weiter</button>
+</form>
 <script type="text/javascript">
     var fragen = {{ dataFrage | tojson }};
     var antworten = {{ dataAntwort | tojson }};
 </script>
 
 <script type="text/javascript" src="{{ url_for('static', filename='fragenkatalog.js') }}"></script>
+
 
 <div>
     <a href="{{ url_for('auswertung') }}"><button type="button">Los gehts!</button>

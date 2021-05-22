@@ -5,6 +5,10 @@ class fragenkat(db.Model):
     pk_frage_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     fragennr = db.Column(db.Integer, unique=True, nullable=False)
     frage = db.Column(db.String, unique=False, nullable=False)
+    antwort1 = db.Column(db.String, unique=False, nullable=False)
+    antwort2 = db.Column(db.String, unique=False, nullable=False)
+    antwort3 = db.Column(db.String, unique=False, nullable=True)
+    antwort4 = db.Column(db.String, unique=False, nullable=True)
 
 
 class antwortkat(db.Model):
