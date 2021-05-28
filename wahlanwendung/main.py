@@ -2,7 +2,7 @@ from flask import render_template, request, session, redirect, url_for
 from wahlanwendung import app, db
 from wahlanwendung.models import fragenkat, antwortkat, progrSpr
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import select, null
+from sqlalchemy import select, null, update
 
 counterJava=0
 counterPython = 0
@@ -46,8 +46,6 @@ def fragenkatalog(fragennr):
         return render_template('fragenkatalog.html', dataFrage=dataFrage, dataAntwort=dataAntwort)
     else:
         answer = request.form.get('answer')
-        # if fragennr = 1 oder 2 oder 8 and antwort = nein dann fragennr +=1
-        # if fragennr = wirtschaft und antwort nein dann fragennr += 2
         if answer == 'a01_02':
             nachfolger = db.session.query(fragenkat.nachfolger).filter_by(pk_frage_id=fragennummer).scalar()
             if (nachfolger != 0):
@@ -94,4 +92,21 @@ def fragenkatalog(fragennr):
 
 @app.route('/auswertung')
 def auswertung():
+    # hier Daten in DB
+    db.session.query(progrSpr).filter_by(sprache='Java').update({progrSpr.absolutes_erg: progrSpr.absolutes_erg + counterJava}, synchronize_session=False)
+    db.session.query(progrSpr).filter_by(sprache='Python').update({progrSpr.absolutes_erg: progrSpr.absolutes_erg + counterPython}, synchronize_session=False)
+    db.session.query(progrSpr).filter_by(sprache='Swift').update({progrSpr.absolutes_erg: progrSpr.absolutes_erg + counterSwift}, synchronize_session=False)
+    db.session.query(progrSpr).filter_by(sprache='C++').update({progrSpr.absolutes_erg: progrSpr.absolutes_erg + counterCplusplus}, synchronize_session=False)
+    db.session.query(progrSpr).filter_by(sprache='C#').update({progrSpr.absolutes_erg: progrSpr.absolutes_erg + counterCsharp}, synchronize_session=False)
+    db.session.query(progrSpr).filter_by(sprache='JavaScript').update({progrSpr.absolutes_erg: progrSpr.absolutes_erg + counterJavascript}, synchronize_session=False)
+    db.session.query(progrSpr).filter_by(sprache='Matlab').update({progrSpr.absolutes_erg: progrSpr.absolutes_erg + counterMatlab}, synchronize_session=False)
+    db.session.query(progrSpr).filter_by(sprache='Go').update({progrSpr.absolutes_erg: progrSpr.absolutes_erg + counterGo}, synchronize_session=False)
+    db.session.query(progrSpr).filter_by(sprache='HTML/CSS').update({progrSpr.absolutes_erg: progrSpr.absolutes_erg + counterHTMLCSS}, synchronize_session=False)
+    db.session.query(progrSpr).filter_by(sprache='SQL').update({progrSpr.absolutes_erg: progrSpr.absolutes_erg + counterSQL}, synchronize_session=False)
+    db.session.query(progrSpr).filter_by(sprache='PHP').update({progrSpr.absolutes_erg: progrSpr.absolutes_erg + counterPHP}, synchronize_session=False)
+    db.session.query(progrSpr).filter_by(sprache='R').update({progrSpr.absolutes_erg: progrSpr.absolutes_erg + counterR}, synchronize_session=False)
+    db.session.query(progrSpr).filter_by(sprache='TypeScript').update({progrSpr.absolutes_erg: progrSpr.absolutes_erg + counterTypescript}, synchronize_session=False)
+    db.session.query(progrSpr).filter_by(sprache='Kotlin').update({progrSpr.absolutes_erg: progrSpr.absolutes_erg + counterKotlin}, synchronize_session=False)
+    db.session.query(progrSpr).filter_by(sprache='ABAP').update({progrSpr.absolutes_erg: progrSpr.absolutes_erg + counterABAP}, synchronize_session=False)
+    db.session.commit()
     return render_template('auswertung.html')
