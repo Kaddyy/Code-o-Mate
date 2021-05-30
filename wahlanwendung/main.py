@@ -40,10 +40,6 @@ def fragenkatalog(fragennr):
         return render_template('fragenkatalog.html', dataFrage=dataFrage, dataAntwort=dataAntwort)
     else:
         answer = request.form.get('answer')
-        if answer == 'a01_02':
-            nachfolger = db.session.query(fragenkat.nachfolger).filter_by(pk_frage_id=fragennummer).scalar()
-            if (nachfolger != 0):
-                fragennr += nachfolger
         if fragennr < db.session.query(fragenkat).count():
             global counterJava
             counterJava += db.session.query(antwortkat.java).filter_by(fragennummer=fragennr, antwort=answer).scalar()
@@ -76,6 +72,10 @@ def fragenkatalog(fragennr):
             global counterABAP
             counterABAP += db.session.query(antwortkat.abap).filter_by(fragennummer=fragennr, antwort=answer).scalar()
             print('C++: ', counterCplusplus)
+            if answer == 'a01_02':
+                nachfolger = db.session.query(fragenkat.nachfolger).filter_by(pk_frage_id=fragennummer).scalar()
+                if (nachfolger != 0):
+                    fragennr += nachfolger
             return redirect(url_for('fragenkatalog', fragennr=fragennr + 1))
         else:
             return render_template('auswertung.html')
