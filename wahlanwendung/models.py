@@ -43,8 +43,7 @@ class progrSpr(db.Model):
     relatives_erg = db.Column(db.Integer, unique=False, nullable=False, default=0)
     link1 = db.Column(db.String, unique=False, nullable=False)
     link2 = db.Column(db.String, unique=False, nullable=True)
-    link3 = db.Column(db.String, unique=False, nullable=True)
-
+    helloWorld = db.Column(db.String, unique=False, nullable=False)
 
 
 

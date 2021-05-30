@@ -110,6 +110,7 @@ def auswertung():
         print('erg:', i, erg)
     #15 mal absolutes_erg / gesamt
     print(ges)
+    #get gesamter Wert
     gesJava = db.session.query(progrSpr.absolutes_erg).filter_by(sprache='Java').scalar() / ges
     gesPython = db.session.query(progrSpr.absolutes_erg).filter_by(sprache='Python').scalar() / ges
     gesSwift = db.session.query(progrSpr.absolutes_erg).filter_by(sprache='Swift').scalar() / ges
@@ -127,4 +128,85 @@ def auswertung():
     gesABAP = db.session.query(progrSpr.absolutes_erg).filter_by(sprache='ABAP').scalar() / ges
     gesamt = {'Java': gesJava, 'Python':gesPython, 'Swift':gesSwift, 'Cplusplus':gesCplusplus, 'Csharp':gesCsharp, 'JavaScript':gesJavaScript, 'Matlab':gesMatlab, 'Go':gesGo, 'HTMLCSS':gesHTMLCSS, 'SQL':gesSQL, 'PHP':gesPHP, 'R':gesR, 'TypeScript':gesTS, 'Kotlin':gesKotlin, 'ABAP':gesABAP}
     print(gesJava)
-    return render_template('auswertung.html', individuell=individuell, gesamt=gesamt)
+    #get Beschreibungen
+    beschrJava = db.session.query(progrSpr.beschreibung).filter_by(sprache='Java').scalar()
+    beschrPython = db.session.query(progrSpr.beschreibung).filter_by(sprache='Python').scalar()
+    beschrSwift = db.session.query(progrSpr.beschreibung).filter_by(sprache='Swift').scalar()
+    beschrCplusplus = db.session.query(progrSpr.beschreibung).filter_by(sprache='C++').scalar()
+    beschrCsharp = db.session.query(progrSpr.beschreibung).filter_by(sprache='C#').scalar()
+    beschrJavaScript = db.session.query(progrSpr.beschreibung).filter_by(sprache='JavaScript').scalar()
+    beschrMatlab = db.session.query(progrSpr.beschreibung).filter_by(sprache='Matlab').scalar()
+    beschrGo = db.session.query(progrSpr.beschreibung).filter_by(sprache='Go').scalar()
+    beschrHTMLCSS = db.session.query(progrSpr.beschreibung).filter_by(sprache='HTML/CSS').scalar()
+    beschrSQL = db.session.query(progrSpr.beschreibung).filter_by(sprache='SQL').scalar()
+    beschrPHP = db.session.query(progrSpr.beschreibung).filter_by(sprache='PHP').scalar()
+    beschrR = db.session.query(progrSpr.beschreibung).filter_by(sprache='R').scalar()
+    beschrTS = db.session.query(progrSpr.beschreibung).filter_by(sprache='TypeScript').scalar()
+    beschrKotlin = db.session.query(progrSpr.beschreibung).filter_by(sprache='Kotlin').scalar()
+    beschrABAP = db.session.query(progrSpr.beschreibung).filter_by(sprache='ABAP').scalar()
+    beschreibungen = {'Java': beschrJava, 'Python': beschrPython, 'Swift': beschrSwift, 'Cplusplus': beschrCplusplus,
+               'Csharp': beschrCsharp, 'JavaScript': beschrJavaScript, 'Matlab': beschrMatlab, 'Go': beschrGo,
+               'HTMLCSS': beschrHTMLCSS, 'SQL': beschrSQL, 'PHP': beschrPHP, 'R': beschrR, 'TypeScript': beschrTS,
+               'Kotlin': beschrKotlin, 'ABAP': beschrABAP}
+
+    # get erste Links
+    linkJava = db.session.query(progrSpr.link1).filter_by(sprache='Java').scalar()
+    linkPython = db.session.query(progrSpr.link1).filter_by(sprache='Python').scalar()
+    linkSwift = db.session.query(progrSpr.link1).filter_by(sprache='Swift').scalar()
+    linkCplusplus = db.session.query(progrSpr.link1).filter_by(sprache='C++').scalar()
+    linkCsharp = db.session.query(progrSpr.link1).filter_by(sprache='C#').scalar()
+    linkJavaScript = db.session.query(progrSpr.link1).filter_by(sprache='JavaScript').scalar()
+    linkMatlab = db.session.query(progrSpr.link1).filter_by(sprache='Matlab').scalar()
+    linkGo = db.session.query(progrSpr.link1).filter_by(sprache='Go').scalar()
+    linkHTMLCSS = db.session.query(progrSpr.link1).filter_by(sprache='HTML/CSS').scalar()
+    linkSQL = db.session.query(progrSpr.link1).filter_by(sprache='SQL').scalar()
+    linkPHP = db.session.query(progrSpr.link1).filter_by(sprache='PHP').scalar()
+    linkR = db.session.query(progrSpr.link1).filter_by(sprache='R').scalar()
+    linkTS = db.session.query(progrSpr.link1).filter_by(sprache='TypeScript').scalar()
+    linkKotlin = db.session.query(progrSpr.link1).filter_by(sprache='Kotlin').scalar()
+    linkABAP = db.session.query(progrSpr.link1).filter_by(sprache='ABAP').scalar()
+    links = {'Java': linkJava, 'Python': linkPython, 'Swift': linkSwift, 'Cplusplus': linkCplusplus,
+             'Csharp': linkCsharp, 'JavaScript': linkJavaScript, 'Matlab': linkMatlab, 'Go': linkGo,
+             'HTMLCSS': linkHTMLCSS, 'SQL': linkSQL, 'PHP': linkPHP, 'R': linkR, 'TypeScript': linkTS,
+             'Kotlin': linkKotlin, 'ABAP': linkABAP}
+    # get link2
+    link2Java = db.session.query(progrSpr.link2).filter_by(sprache='Java').scalar()
+    link2Python = db.session.query(progrSpr.link2).filter_by(sprache='Python').scalar()
+    link2Swift = db.session.query(progrSpr.link2).filter_by(sprache='Swift').scalar()
+    link2Cplusplus = db.session.query(progrSpr.link2).filter_by(sprache='C++').scalar()
+    link2Csharp = db.session.query(progrSpr.link2).filter_by(sprache='C#').scalar()
+    link2JavaScript = db.session.query(progrSpr.link2).filter_by(sprache='JavaScript').scalar()
+    link2Matlab = db.session.query(progrSpr.link2).filter_by(sprache='Matlab').scalar()
+    link2Go = db.session.query(progrSpr.link2).filter_by(sprache='Go').scalar()
+    link2HTMLCSS = db.session.query(progrSpr.link2).filter_by(sprache='HTML/CSS').scalar()
+    link2SQL = db.session.query(progrSpr.link2).filter_by(sprache='SQL').scalar()
+    link2PHP = db.session.query(progrSpr.link2).filter_by(sprache='PHP').scalar()
+    link2R = db.session.query(progrSpr.link2).filter_by(sprache='R').scalar()
+    link2TS = db.session.query(progrSpr.link2).filter_by(sprache='TypeScript').scalar()
+    link2Kotlin = db.session.query(progrSpr.link2).filter_by(sprache='Kotlin').scalar()
+    link2ABAP = db.session.query(progrSpr.link2).filter_by(sprache='ABAP').scalar()
+    links2 = {'Java': link2Java, 'Python': link2Python, 'Swift': link2Swift, 'Cplusplus': link2Cplusplus,
+              'Csharp': link2Csharp, 'JavaScript': link2JavaScript, 'Matlab': link2Matlab, 'Go': link2Go,
+              'HTMLCSS': link2HTMLCSS, 'SQL': link2SQL, 'PHP': link2PHP, 'R': link2R, 'TypeScript': link2TS,
+              'Kotlin': link2Kotlin, 'ABAP': link2ABAP}
+    # get hello Worlds
+    hW2Java = db.session.query(progrSpr.helloWorld).filter_by(sprache='Java').scalar()
+    hW2Python = db.session.query(progrSpr.helloWorld).filter_by(sprache='Python').scalar()
+    hW2Swift = db.session.query(progrSpr.helloWorld).filter_by(sprache='Swift').scalar()
+    hW2Cplusplus = db.session.query(progrSpr.helloWorld).filter_by(sprache='C++').scalar()
+    hW2Csharp = db.session.query(progrSpr.helloWorld).filter_by(sprache='C#').scalar()
+    hW2JavaScript = db.session.query(progrSpr.helloWorld).filter_by(sprache='JavaScript').scalar()
+    hW2Matlab = db.session.query(progrSpr.helloWorld).filter_by(sprache='Matlab').scalar()
+    hW2Go = db.session.query(progrSpr.helloWorld).filter_by(sprache='Go').scalar()
+    hW2HTMLCSS = db.session.query(progrSpr.helloWorld).filter_by(sprache='HTML/CSS').scalar()
+    hW2SQL = db.session.query(progrSpr.helloWorld).filter_by(sprache='SQL').scalar()
+    hW2PHP = db.session.query(progrSpr.helloWorld).filter_by(sprache='PHP').scalar()
+    hW2R = db.session.query(progrSpr.helloWorld).filter_by(sprache='R').scalar()
+    hW2TS = db.session.query(progrSpr.helloWorld).filter_by(sprache='TypeScript').scalar()
+    hW2Kotlin = db.session.query(progrSpr.helloWorld).filter_by(sprache='Kotlin').scalar()
+    hW2ABAP = db.session.query(progrSpr.helloWorld).filter_by(sprache='ABAP').scalar()
+    helloWorlds = {'Java': hW2Java, 'Python': hW2Python, 'Swift': hW2Swift, 'Cplusplus': hW2Cplusplus,
+                   'Csharp': hW2Csharp, 'JavaScript': hW2JavaScript, 'Matlab': hW2Matlab, 'Go': hW2Go,
+                   'HTMLCSS': hW2HTMLCSS, 'SQL': hW2SQL, 'PHP': hW2PHP, 'R': hW2R, 'TypeScript': hW2TS,
+                   'Kotlin': hW2Kotlin, 'ABAP': hW2ABAP}
+    return render_template('auswertung.html', individuell=individuell, gesamt=gesamt, links=links, links2=links2, helloWorlds=helloWorlds)
