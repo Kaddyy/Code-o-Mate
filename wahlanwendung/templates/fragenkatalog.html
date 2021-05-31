@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<p>{{ dataFrage.frage }}</p>
+<p id="frage">{{ dataFrage.frage }}</p>
 
 <form method="post">
     <ul id="antwortListe" action="/fragenkatalog" method="post" class="fragencontainer">
@@ -29,9 +29,14 @@
     <button type="submit" id="weiterbtn">Weiter</button>
 </form>
 
+
+
 <div>
-    <a href="{{ url_for('auswertung') }}"><button type="button">Auf geht's zur Auswertung!</button>
+    <a href="{{ url_for('auswertung') }}"><button type="button" id="auswertung">Auf geht's zur Auswertung!</button>
     </a>
 </div>
+
+<script src="{{ url_for('static', filename ='fragenkatalog.js') }}"></script>
+
 
 {% endblock %}
