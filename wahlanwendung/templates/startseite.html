@@ -2,17 +2,21 @@
 
 {% block content %}
 
-<h2>Willkommen zum Code-o-Mate!</h2>
-
 <div class="willkommenstext">
-    <p>
-        Hallo Ihr da draußen! Werdet Code-o-Mater!<br>
-        Der Code-o-Mate wird euch einige Fragen stellen und am Ende die für euch zutreffenste Programmiersprache ermitteln.
+    <p class="überschrift">Ihr wollt eine neue Programmiersprache lernen und wisst nicht welche?</p>
+    <p class="fliesstext">Java, Python, Matlab und viele mehr. Es gibt so viele Programmiersprachen, dass man
+    oft den Wald vor lauter Bäume nicht mehr sieht oder in einer unendlichen while-true-Schleife gefangen ist.
+        Werde auch du zum Code-o-Mater und finde den Ausgang aus diesem Dschungel der Sprachen.
+        Wir zeigen dir aufgrund deiner persönlichen Interessen, welche Programmiersprachen am besten zu dir passen.<br>
+        Um für einen groben Überblick zu sorgen haben wir uns für 15 bekannte Sprachen entschieden.
+        Das Ergebnis ist natürlich nicht verbindlich, da jede Sprache für viele unterschiedle Anwendungsgebiete genutzt werden kann.
+        <br> <br>
+        Viel Spaß beim Code-o-Maten!
     </p>
 </div>
 
-<div>
-    <a href="{{ url_for('fragenkatalog', fragennr = 1) }}"><button type="button" id="losBtn">Los gehts!</button>
+<div class="btn_container">
+    <a href="{{ url_for('fragenkatalog', fragennr = 1) }}"><button class="btn" type="button" id="losBtn">Los gehts!</button>
     </a>
 </div>
 

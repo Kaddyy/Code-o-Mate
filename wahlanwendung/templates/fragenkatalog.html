@@ -2,10 +2,10 @@
 
 {% block content %}
 
-<p id="frage">{{ dataFrage.frage }}</p>
-
 <form method="post">
-    <ul id="antwortListe" action="/fragenkatalog" method="post" class="fragencontainer">
+    <div class="fragenContainer">
+    <p id="frage">{{ dataFrage.frage }}</p>
+    <ul id="antwortListe" action="/fragenkatalog" method="post" style="list-style-type: none" class="fragenInnerContainer">
         <li>
             <input type="radio" name="answer" value="a01_01" id="a01_1" checked>
             <label for="a01_3" id="label_01">{{ dataAntwort.antwort1 }}</label>
@@ -14,27 +14,25 @@
             <input type="radio" name="answer" value="a01_02" id="a01_2">
             <label for="a01_3" id="label_02">{{ dataAntwort.antwort2 }}</label>
         </li>
-        <div class="optionalAnswers" id="optAnswer3">
-         <li>
+        <li id="li_03">
             <input type="radio" name="answer" value="a01_03" id="a01_3">
             <label for="a01_3" id="label_03">{{ dataAntwort.antwort3 }}</label>
         </li>
-        </div>
-        <li>
+        <li id="li_04">
             <input type="radio" name="answer" value="a01_04" id="a01_4">
             <label for="a01_4" id="label_04">{{ dataAntwort.antwort4 }}</label>
         </li>
     </ul>
+    </div>
 
-    <button type="submit" id="weiterbtn">Weiter</button>
+    <div class="btnContainer">
+      <button class="weiterBtn" type="submit" id="weiterbtn">Weiter</button>
+    </div>
 </form>
 
-
-
-<div>
-    <a href="{{ url_for('auswertung') }}"><button type="button" id="auswertung">Auf geht's zur Auswertung!</button>
-    </a>
-</div>
+    <div class="btnContainer">
+        <a href="{{ url_for('auswertung') }}"><button type="button" id="auswertung" >Auf geht's zur Auswertung!</button></a>
+    </div>
 
 <script src="{{ url_for('static', filename ='fragenkatalog.js') }}"></script>
 

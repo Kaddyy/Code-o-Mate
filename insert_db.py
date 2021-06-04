@@ -51,11 +51,11 @@ frage14 = models.fragenkat(fragennr=14, frage='Hast du Interesse daran Zahlen un
 frage15 = models.fragenkat(fragennr=15, frage='Möchtest du SAP programmieren?', antwort1='Ja', antwort2='Nein', nachfolger=0)
 frage16 = models.fragenkat(fragennr=16, frage='Hast du Interesse daran Videospiele zu programmieren?', antwort1='Ja', antwort2='Nein', nachfolger=1)
 frage17 = models.fragenkat(fragennr=17, frage='In welcher Engine möchtest du entwickeln?', antwort1='Unity 3D', antwort2='Unreal', antwort3='Beide Engines interessieren mich', nachfolger=0)
-frage18 = models.fragenkat(fragennr=18, frage='Hast du Interesse daran Roboter zu programmieren?', antwort1='Ja', antwort2='Nein', nachfolger=0)
-frage19 = models.fragenkat(fragennr=19, frage='Hast du Interesse daran Webseiten zu programmieren?', antwort1='Ja', antwort2='Nein', nachfolger=1)
-frage20 = models.fragenkat(fragennr=20, frage='Möchtest du im Frontend oder im Backend programmieren', antwort1='Frontend', antwort2='Backend', antwort3='Ich möchte beides lernen', nachfolger=0)
-frage21 = models.fragenkat(fragennr=21, frage='Hast du Interesse daran Apps zu programmieren?', antwort1='Ja', antwort2='Nein', nachfolger=1)
-frage22 = models.fragenkat(fragennr=22, frage='Möchtest du für Android oder IOS programmieren?', antwort1='Android', antwort2='IOS', antwort3='Mich interessieren beide Betriebssysteme', nachfolger=0)
+frage18 = models.fragenkat(fragennr=18, frage='Hast du Interesse daran Webseiten zu programmieren?', antwort1='Ja', antwort2='Nein', nachfolger=1)
+frage19 = models.fragenkat(fragennr=19, frage='Möchtest du im Frontend oder im Backend programmieren', antwort1='Frontend', antwort2='Backend', antwort3='Ich möchte beides lernen', nachfolger=0)
+frage20 = models.fragenkat(fragennr=20, frage='Hast du Interesse daran Apps zu programmieren?', antwort1='Ja', antwort2='Nein', nachfolger=1)
+frage21 = models.fragenkat(fragennr=21, frage='Möchtest du für Android oder IOS programmieren?', antwort1='Android', antwort2='IOS', antwort3='Mich interessieren beide Betriebssysteme', nachfolger=0)
+frage22 = models.fragenkat(fragennr=22, frage='Hast du Interesse daran Roboter zu programmieren?', antwort1='Ja', antwort2='Nein', nachfolger=0)
 
 db.session.add(frage1)
 db.session.add(frage2)
@@ -153,28 +153,27 @@ antwort35 = models.antwortkat(fragennummer=17, antwort='a01_01', java=0, python=
 antwort36 = models.antwortkat(fragennummer=17, antwort='a01_02', java=0, python=0, swift=0, cplusplus=3, csharp=0, javascript=0, matlab=0, go=0, htmlcss=0, sql=0, php=0, r=0, typescript=0, kotlin=0, abap=0)
 antwort37 = models.antwortkat(fragennummer=17, antwort='a01_03', java=0, python=0, swift=0, cplusplus=3, csharp=3, javascript=0, matlab=0, go=0, htmlcss=0, sql=0, php=0, r=0, typescript=0, kotlin=0, abap=0)
 
-#Roboter
-antwort38 = models.antwortkat(fragennummer=18, antwort='a01_01', java=0, python=0, swift=0, cplusplus=4, csharp=0, javascript=0, matlab=5, go=0, htmlcss=0, sql=0, php=0, r=0, typescript=0, kotlin=0, abap=0)
+#Webseiten
+antwort38 = models.antwortkat(fragennummer=18, antwort='a01_01', java=0, python=0, swift=0, cplusplus=0, csharp=0, javascript=0, matlab=0, go=2, htmlcss=0, sql=0, php=0, r=0, typescript=0, kotlin=0, abap=0)
 antwort39 = models.antwortkat(fragennummer=18, antwort='a01_02', java=0, python=0, swift=0, cplusplus=0, csharp=0, javascript=0, matlab=0, go=0, htmlcss=0, sql=0, php=0, r=0, typescript=0, kotlin=0, abap=0)
 
-#Webseiten
-antwort40 = models.antwortkat(fragennummer=19, antwort='a01_01', java=0, python=0, swift=0, cplusplus=0, csharp=0, javascript=0, matlab=0, go=2, htmlcss=0, sql=0, php=0, r=0, typescript=0, kotlin=0, abap=0)
-antwort41 = models.antwortkat(fragennummer=19, antwort='a01_02', java=0, python=0, swift=0, cplusplus=0, csharp=0, javascript=0, matlab=0, go=0, htmlcss=0, sql=0, php=0, r=0, typescript=0, kotlin=0, abap=0)
-
 #Front-/Backend
-antwort42 = models.antwortkat(fragennummer=20, antwort='a01_01', java=0, python=0, swift=0, cplusplus=0, csharp=0, javascript=5, matlab=0, go=0, htmlcss=10, sql=0, php=0, r=0, typescript=5, kotlin=0, abap=0)
-antwort43 = models.antwortkat(fragennummer=20, antwort='a01_02', java=0, python=2, swift=0, cplusplus=0, csharp=0, javascript=0, matlab=0, go=0, htmlcss=0, sql=5, php=10, r=0, typescript=0, kotlin=0, abap=0)
-antwort44 = models.antwortkat(fragennummer=20, antwort='a01_03', java=0, python=2, swift=0, cplusplus=0, csharp=0, javascript=5, matlab=0, go=0, htmlcss=10, sql=5, php=10, r=0, typescript=5, kotlin=0, abap=0)
+antwort40 = models.antwortkat(fragennummer=19, antwort='a01_01', java=0, python=0, swift=0, cplusplus=0, csharp=0, javascript=5, matlab=0, go=0, htmlcss=10, sql=0, php=0, r=0, typescript=5, kotlin=0, abap=0)
+antwort41 = models.antwortkat(fragennummer=19, antwort='a01_02', java=0, python=2, swift=0, cplusplus=0, csharp=0, javascript=0, matlab=0, go=0, htmlcss=0, sql=5, php=10, r=0, typescript=0, kotlin=0, abap=0)
+antwort42 = models.antwortkat(fragennummer=19, antwort='a01_03', java=0, python=2, swift=0, cplusplus=0, csharp=0, javascript=5, matlab=0, go=0, htmlcss=10, sql=5, php=10, r=0, typescript=5, kotlin=0, abap=0)
 
 #Apps
-antwort45 = models.antwortkat(fragennummer=21, antwort='a01_01', java=0, python=0, swift=0, cplusplus=0, csharp=0, javascript=0, matlab=0, go=0, htmlcss=0, sql=0, php=0, r=0, typescript=0, kotlin=10, abap=0)
-antwort46 = models.antwortkat(fragennummer=21, antwort='a01_02', java=0, python=0, swift=0, cplusplus=0, csharp=0, javascript=0, matlab=0, go=0, htmlcss=0, sql=0, php=0, r=0, typescript=0, kotlin=0, abap=0)
+antwort43 = models.antwortkat(fragennummer=20, antwort='a01_01', java=0, python=0, swift=0, cplusplus=0, csharp=0, javascript=0, matlab=0, go=0, htmlcss=0, sql=0, php=0, r=0, typescript=0, kotlin=10, abap=0)
+antwort44 = models.antwortkat(fragennummer=20, antwort='a01_02', java=0, python=0, swift=0, cplusplus=0, csharp=0, javascript=0, matlab=0, go=0, htmlcss=0, sql=0, php=0, r=0, typescript=0, kotlin=0, abap=0)
 
 #Android/IOS
-antwort47 = models.antwortkat(fragennummer=22, antwort='a01_01', java=3, python=0, swift=0, cplusplus=0, csharp=0, javascript=0, matlab=0, go=0, htmlcss=0, sql=0, php=0, r=0, typescript=0, kotlin=0, abap=0)
-antwort48 = models.antwortkat(fragennummer=22, antwort='a01_02', java=0, python=0, swift=10, cplusplus=0, csharp=0, javascript=0, matlab=0, go=0, htmlcss=0, sql=0, php=0, r=0, typescript=0, kotlin=0, abap=0)
-antwort49 = models.antwortkat(fragennummer=22, antwort='a01_03', java=3, python=0, swift=10, cplusplus=0, csharp=0, javascript=0, matlab=0, go=0, htmlcss=0, sql=0, php=0, r=0, typescript=0, kotlin=0, abap=0)
+antwort45 = models.antwortkat(fragennummer=21, antwort='a01_01', java=3, python=0, swift=0, cplusplus=0, csharp=0, javascript=0, matlab=0, go=0, htmlcss=0, sql=0, php=0, r=0, typescript=0, kotlin=0, abap=0)
+antwort46 = models.antwortkat(fragennummer=21, antwort='a01_02', java=0, python=0, swift=10, cplusplus=0, csharp=0, javascript=0, matlab=0, go=0, htmlcss=0, sql=0, php=0, r=0, typescript=0, kotlin=0, abap=0)
+antwort47 = models.antwortkat(fragennummer=21, antwort='a01_03', java=3, python=0, swift=10, cplusplus=0, csharp=0, javascript=0, matlab=0, go=0, htmlcss=0, sql=0, php=0, r=0, typescript=0, kotlin=0, abap=0)
 
+#Roboter
+antwort48 = models.antwortkat(fragennummer=22, antwort='a01_01', java=0, python=0, swift=0, cplusplus=4, csharp=0, javascript=0, matlab=5, go=0, htmlcss=0, sql=0, php=0, r=0, typescript=0, kotlin=0, abap=0)
+antwort49 = models.antwortkat(fragennummer=22, antwort='a01_02', java=0, python=0, swift=0, cplusplus=0, csharp=0, javascript=0, matlab=0, go=0, htmlcss=0, sql=0, php=0, r=0, typescript=0, kotlin=0, abap=0)
 
 
 db.session.add(antwort1)
