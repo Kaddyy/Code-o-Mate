@@ -7,12 +7,23 @@ body {
     font-family: 'Roboto Condensed', sans-serif, bold;
     background-color: #242424;
     border: 5px solid #9939F9;
-    width: 700px;
+    width: 1000px;
     margin: auto;
     border-radius: 20px;
     margin-top: 30px;
 }
 
+h1 .h1_02 {
+    justify-content: center;
+    vertical-align: center;
+    color: #9939F9;
+    font-size: 2em;
+}
 
+
+h1 .h1_01 {
+    color: #FFFFFF;
+    font-size: 3em;
+}
 
 

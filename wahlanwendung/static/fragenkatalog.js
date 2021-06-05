@@ -1,4 +1,4 @@
-    whatauchimmer = document.querySelector("#label_03").innerText;
+   whatauchimmer = document.querySelector("#label_03").innerText;
     if (whatauchimmer == "None") {
     document.querySelector("#label_03").hidden = true;
     document.querySelector("#a01_3").hidden = true;
@@ -14,10 +14,19 @@
 
     letzteFrage = document.querySelector("#frage").innerText;
     if (letzteFrage != "Hast du Interesse daran Roboter zu programmieren?"){
+    document.querySelector("#auswertung").className = "hiddenBtn";
+    } else{
+    document.querySelector("#weiterbtn").className = "hiddenBtn";
+    }
+
+/*
+    letzteFrage = document.querySelector("#frage").innerText;
+    if (letzteFrage != "Hast du Interesse daran Roboter zu programmieren?"){
     document.querySelector("#auswertung").hidden = true;
     } else{
     document.querySelector("#weiterbtn").hidden = true;
     }
+*/
 
 /*function checkTonio(){
     //checkAnswer3 = antworten.antwort3;
