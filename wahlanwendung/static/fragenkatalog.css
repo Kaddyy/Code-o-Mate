@@ -32,14 +32,6 @@
     border-size: 5px;
 }
 
-/*
-.fragenInnerContainer input[type="radio"]:focus + label {
-    background-color: green;
-    border-color: #FFFFFF;
-    border-size: 5px;
-}
-*/
-
 .fragenInnerContainer label:hover {
     background-color: #9939F9;
 }
