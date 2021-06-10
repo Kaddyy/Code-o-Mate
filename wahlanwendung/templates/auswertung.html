@@ -34,6 +34,10 @@ google.charts.setOnLoadCallback(drawChart);
           width: 440,
           backgroundColor: 'transparent',
           legend: 'none',
+          tooltip: {
+            text: 'percentage'
+          },
+          pieSliceText: 'label',
           colors: ['#b252ff', '#a848f5', '#9d3eeb', '#9334e1', '#8a2ad7', '#7f20cd', '#7616c3', '#6C0CB9', '#6202AF', '#5800A5', '#4E009B', '#440091', '#3A0087', '#30007D', '#260073']
         };
 
@@ -73,6 +77,10 @@ google.charts.setOnLoadCallback(drawChart);
           width: 440,
           backgroundColor: 'transparent',
           legend: 'none',
+          tooltip: {
+            text: 'percentage'
+          },
+          pieSliceText: 'label',
           colors: ['#b252ff', '#a848f5', '#9d3eeb', '#9334e1', '#8a2ad7', '#7f20cd', '#7616c3', '#6C0CB9', '#6202AF', '#5800A5', '#4E009B', '#440091', '#3A0087', '#30007D', '#260073']
         };
 
@@ -82,14 +90,25 @@ google.charts.setOnLoadCallback(drawChart);
       }
 </script>
 
-<div class="piechartContainer">
-    <p>Hier ist dein individuelles Ergebnis:</p>
-    <div id="piechartIndividuell" style="width: 56.25em; height: 31.25em;"></div >
+<div class="ErklärtextContainer">
+    <p class="erklärtext">Fahre über die Kuchenstücke um die genauen Werte für die einzelnen Programmiersprachen zu erfahren.</p>
 </div>
 
-<div class="piechartContainer">
-    <p>Hier ist das Ergebnis von allen Code-o-Matern:</p>
-    <div id="piechartGesamt" style="width: 56.25em; height: 31.25em;"></div >
+<div class="piechartOuterContainer">
+    <div class="piechartContainerIndividuell">
+        <p>Hier ist dein individuelles Ergebnis:</p>
+        <div id="piechartIndividuell" style="width: 56.25em; height: 15.25em;"></div >
+    </div>
+
+    <div class="piechartContainerGesamt">
+        <p>Hier ist das Ergebnis von allen Code-o-Matern:</p>
+        <div id="piechartGesamt" style="width: 56.25em; height: 15.25em;"></div >
+    </div>
+</div>
+
+<div class="SprachenContainer">
+    <p class="ProgrammierspracheÜberschrift">Du willst mehr über die jeweilige Programmiersprache erfahren?</p>
+    <p class="Fließtext">Dann such dir eine der unten verfügbaren Sprachen aus und du wirst hier einige Informationen erhalten.</p>
 </div>
 
 {% endblock %}

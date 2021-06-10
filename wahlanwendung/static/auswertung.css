@@ -1,13 +1,66 @@
-/* Container für beide PieCharts */
-.piechartContainer {
+.ErklärtextContainer {
     border-radius: 20px;
     background-color: #242424 ;
     font-family: 'Roboto Condensed', sans-serif;
     color: #FFFFFF;
     padding: 8px 12px;
-    width: 35%;
-    margin-right: 5%;
-    margin-left: 5%;
+    width: 62.5em;
+    margin: auto;
     margin-top: 3em;
+}
+
+/* Container für beide PieCharts */
+.piechartOuterContainer {
+   width: 62.5em;
+   margin: auto;
+   margin-top: 3em;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.piechartContainerIndividuell {
+    border-radius: 20px;
+    background-color: #242424 ;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #FFFFFF;
+    padding: 8px 12px;
+    width: 25em;
     float: left;
+}
+
+#piechartIndividuell{
+    margin-top: -2em;
+}
+
+.piechartContainerGesamt {
+    border-radius: 20px;
+    background-color: #242424 ;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #FFFFFF;
+    padding: 8px 12px;
+    width: 25em;
+    margin-left: 5%;
+    float: left;
+}
+
+#piechartGesamt{
+    margin-top: -2em;
+}
+
+.SprachenContainer {
+    width: 62.5em;
+    border-radius: 20px;
+    padding: 8px 12px;
+    background-color: #242424 ;
+    color: #FFFFFF;
+    text-align: left;
+    margin: auto;
+    margin-top: 25em;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.Fließtext {
+    color: rgba(255,255,255,0.65);
+    margin-left: 2.5em;
 }
