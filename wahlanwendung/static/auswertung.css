@@ -1,0 +1,12 @@
+.piechartContainer {
+    border-radius: 20px;
+    background-color: #242424 ;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #FFFFFF;
+    padding: 8px 12px;
+    width: 35%;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 3em;
+    float: left;
+}

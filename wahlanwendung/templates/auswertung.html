@@ -1,40 +1,94 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Deine Auswertung</h2>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-<p>Java: {{ individuell.Java }} <br>
-    Python: {{ individuell.Python }} <br>
-    Swift: {{ individuell.Swift }} <br>
-    Cplusplus: {{ individuell.Cplusplus }} <br>
-    Csharp: {{ individuell.Csharp }} <br>
-    JavaScript: {{ individuell.JavaScript }} <br>
-    Matlab:{{ individuell.Matlab }} <br>
-    Go:{{ individuell.Go }} <br>
-    HTMLCSS:{{ individuell.HTMLCSS }} <br>
-    SQL:{{ individuell.SQL }} <br>
-    PHP:{{ individuell.PHP }} <br>
-    R:{{ individuell.R }} <br>
-    TypeScript:{{ individuell.TypeScript }} <br>
-    Kotlin:{{ individuell.Kotlin }} <br>
-    ABAP:{{ individuell.ABAP }}
-</p>
-<p>Java: {{ gesamt.Java }} <br>
-    Python: {{ gesamt.Python }} <br>
-    Swift: {{ gesamt.Swift }} <br>
-    Cplusplus: {{ gesamt.Cplusplus }} <br>
-    Csharp: {{ gesamt.Csharp }} <br>
-    JavaScript: {{ gesamt.JavaScript }} <br>
-    Matlab:{{ gesamt.Matlab }} <br>
-    Go:{{ gesamt.Go }} <br>
-    HTMLCSS:{{ gesamt.HTMLCSS }} <br>
-    SQL:{{ gesamt.SQL }} <br>
-    PHP:{{ gesamt.PHP }} <br>
-    R:{{ gesamt.R }} <br>
-    TypeScript:{{ gesamt.TypeScript }} <br>
-    Kotlin:{{ gesamt.Kotlin }} <br>
-    ABAP:{{ gesamt.ABAP }}
-</p>
+<script>
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
 
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Programmiersprache', 'Ergebnis'],
+          ['Java',          {{ individuell.Java }}],
+          ['Python',        {{ individuell.Python }}],
+          ['Swift',         {{ individuell.Swift }}],
+          ['C++',           {{ individuell.Cplusplus }}],
+          ['C#',            {{ individuell.Csharp }}],
+          ['JavaScript',    {{ individuell.JavaScript  }}],
+          ['Matlab',        {{ individuell.Matlab }}],
+          ['Go',            {{ individuell.Go }}],
+          ['HTML, CSS',     {{ individuell.HTMLCSS }}],
+          ['SQL',           {{ individuell.SQL }}],
+          ['PHP',           {{ individuell.PHP }}],
+          ['R',             {{ individuell.R }}],
+          ['TypeScript',    {{ individuell.TypeScript }}],
+          ['Kotlin',        {{ individuell.Kotlin }}],
+          ['ABAP',          {{ individuell.ABAP }}]
+        ]);
+
+        var options = {
+          height: 280,
+          width: 440,
+          backgroundColor: 'transparent',
+          legend: 'none',
+          colors: ['#b252ff', '#a848f5', '#9d3eeb', '#9334e1', '#8a2ad7', '#7f20cd', '#7616c3', '#6C0CB9', '#6202AF', '#5800A5', '#4E009B', '#440091', '#3A0087', '#30007D', '#260073']
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechartIndividuell'));
+
+        chart.draw(data, options);
+      }
+</script>
+
+<script>
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Programmiersprache', 'Ergebnis'],
+          ['Java',          {{ gesamt.Java }}],
+          ['Python',        {{ gesamt.Python }}],
+          ['Swift',         {{ gesamt.Swift }}],
+          ['C++',           {{ gesamt.Cplusplus }}],
+          ['C#',            {{ gesamt.Csharp }}],
+          ['JavaScript',    {{ gesamt.JavaScript  }}],
+          ['Matlab',        {{ gesamt.Matlab }}],
+          ['Go',            {{ gesamt.Go }}],
+          ['HTML, CSS',     {{ gesamt.HTMLCSS }}],
+          ['SQL',           {{ gesamt.SQL }}],
+          ['PHP',           {{ gesamt.PHP }}],
+          ['R',             {{ gesamt.R }}],
+          ['TypeScript',    {{ gesamt.TypeScript }}],
+          ['Kotlin',        {{ gesamt.Kotlin }}],
+          ['ABAP',          {{ gesamt.ABAP }}]
+        ]);
+
+        var options = {
+          height: 280,
+          width: 440,
+          backgroundColor: 'transparent',
+          legend: 'none',
+          colors: ['#b252ff', '#a848f5', '#9d3eeb', '#9334e1', '#8a2ad7', '#7f20cd', '#7616c3', '#6C0CB9', '#6202AF', '#5800A5', '#4E009B', '#440091', '#3A0087', '#30007D', '#260073']
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechartGesamt'));
+
+        chart.draw(data, options);
+      }
+</script>
+
+<div class="piechartContainer">
+    <p>Hier ist dein individuelles Ergebnis:</p>
+    <div id="piechartIndividuell" style="width: 56.25em; height: 31.25em;"></div >
+</div>
+
+<div class="piechartContainer">
+    <p>Hier ist das Ergebnis von allen Code-o-Matern:</p>
+    <div id="piechartGesamt" style="width: 56.25em; height: 31.25em;"></div >
+</div>
 
 {% endblock %}
