@@ -111,4 +111,30 @@ google.charts.setOnLoadCallback(drawChart);
     <p class="Fließtext">Dann such dir eine der unten verfügbaren Sprachen aus und du wirst hier einige Informationen erhalten.</p>
 </div>
 
+<div class="aktSpracheContainer">
+    <p class="progrSprache" id="progrSprache">Programmiersprache</p>
+    <p class="sprachenBeschreibung" id="sprachenBeschreibung">Beschreibung</p>
+    <p class="helloWorld" id="helloWorld">helloWorld</p>
+    <a href="" id="link1" class="link">Linkilink</a>
+    <a href="" id="link2" class="link">Linkilink2</a>
+</div>
+
+ <div class="sprachButton" id="sprachButtons">
+            <button onclick='document.getElementById("progrSprache").innerHTML="ABAP";
+                      document.getElementById("sprachenBeschreibung").innerHTML="{{beschreibungen.ABAP}}";
+                      document.getElementById("helloWorld").innerHTML="{{helloWorlds.ABAP}}";
+                      document.getElementById("link1").innerHTML="{{links.ABAP}}";
+                      document.getElementById("link1").href="{{links.ABAP}}";
+                      document.getElementById("link2").innerHTML="{{links2.ABAP}}";
+                      document.getElementById("link2").href="{{links2.ABAP}}"'>ABAP</button>
+           <button onclick='document.getElementById("progrSprache").innerHTML="Java";
+                      document.getElementById("sprachenBeschreibung").innerHTML="{{beschreibungen.Java}}";
+                      document.getElementById("helloWorld").innerHTML="{{helloWorlds.Java}}";
+                      document.getElementById("link1").innerHTML="{{links.Java}}";
+                      document.getElementById("link1").href="{{links.Java}}";
+                      document.getElementById("link2").innerHTML="{{links2.Java}}";
+                      document.getElementById("link2").href="{{links2.Java}}"'>Java</button>
+
+ </div>
+
 {% endblock %}

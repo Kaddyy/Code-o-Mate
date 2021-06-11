@@ -71,7 +71,7 @@ def fragenkatalog(fragennr):
             counterKotlin += db.session.query(antwortkat.kotlin).filter_by(fragennummer=fragennr, antwort=answer).scalar()
             global counterABAP
             counterABAP += db.session.query(antwortkat.abap).filter_by(fragennummer=fragennr, antwort=answer).scalar()
-            print('C++: ', counterCplusplus)
+            #print('C++: ', counterCplusplus)
             if answer == 'a01_02':
                 nachfolger = db.session.query(fragenkat.nachfolger).filter_by(pk_frage_id=fragennummer).scalar()
                 if (nachfolger != 0):
@@ -107,9 +107,8 @@ def auswertung():
     for i in range(1, sprachenanz):
         erg = db.session.query(progrSpr.absolutes_erg).filter_by(pk_id=i).scalar()
         ges += erg
-        print('erg:', i, erg)
+       ## print('erg:', i, erg)
     #15 mal absolutes_erg / gesamt
-    print(ges)
     #get gesamter Wert
     gesJava = db.session.query(progrSpr.absolutes_erg).filter_by(sprache='Java').scalar() / ges
     gesPython = db.session.query(progrSpr.absolutes_erg).filter_by(sprache='Python').scalar() / ges
@@ -127,7 +126,7 @@ def auswertung():
     gesKotlin = db.session.query(progrSpr.absolutes_erg).filter_by(sprache='Kotlin').scalar() / ges
     gesABAP = db.session.query(progrSpr.absolutes_erg).filter_by(sprache='ABAP').scalar() / ges
     gesamt = {'Java': gesJava, 'Python':gesPython, 'Swift':gesSwift, 'Cplusplus':gesCplusplus, 'Csharp':gesCsharp, 'JavaScript':gesJavaScript, 'Matlab':gesMatlab, 'Go':gesGo, 'HTMLCSS':gesHTMLCSS, 'SQL':gesSQL, 'PHP':gesPHP, 'R':gesR, 'TypeScript':gesTS, 'Kotlin':gesKotlin, 'ABAP':gesABAP}
-    print(gesJava)
+
     #get Beschreibungen
     beschrJava = db.session.query(progrSpr.beschreibung).filter_by(sprache='Java').scalar()
     beschrPython = db.session.query(progrSpr.beschreibung).filter_by(sprache='Python').scalar()
@@ -209,4 +208,7 @@ def auswertung():
                    'Csharp': hW2Csharp, 'JavaScript': hW2JavaScript, 'Matlab': hW2Matlab, 'Go': hW2Go,
                    'HTMLCSS': hW2HTMLCSS, 'SQL': hW2SQL, 'PHP': hW2PHP, 'R': hW2R, 'TypeScript': hW2TS,
                    'Kotlin': hW2Kotlin, 'ABAP': hW2ABAP}
-    return render_template('auswertung.html', individuell=individuell, gesamt=gesamt, links=links, links2=links2, helloWorlds=helloWorlds)
+    return render_template('auswertung.html', individuell=individuell, beschreibungen=beschreibungen, gesamt=gesamt, links=links, links2=links2, helloWorlds=helloWorlds)
+
+
+print("""System.out.println("Hello World");""")
