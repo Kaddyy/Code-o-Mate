@@ -4,6 +4,8 @@ from wahlanwendung.models import fragenkat, antwortkat, progrSpr
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import select, null, update
 
+SPRACHE_HTML_CSS__SCALAR = db.session.query(progrSpr.helloWorld).filter_by(sprache='HTML/CSS').scalar()
+
 counterJava = 0
 counterPython = 0
 counterSwift = 0
@@ -204,6 +206,9 @@ def auswertung():
     hW2TS = db.session.query(progrSpr.helloWorld).filter_by(sprache='TypeScript').scalar()
     hW2Kotlin = db.session.query(progrSpr.helloWorld).filter_by(sprache='Kotlin').scalar()
     hW2ABAP = db.session.query(progrSpr.helloWorld).filter_by(sprache='ABAP').scalar()
+    #print(hW2Java)
+    print(hW2ABAP)
+    p_ = '<p>Hello World</%p>'
     helloWorlds = {'Java': hW2Java, 'Python': hW2Python, 'Swift': hW2Swift, 'Cplusplus': hW2Cplusplus,
                    'Csharp': hW2Csharp, 'JavaScript': hW2JavaScript, 'Matlab': hW2Matlab, 'Go': hW2Go,
                    'HTMLCSS': hW2HTMLCSS, 'SQL': hW2SQL, 'PHP': hW2PHP, 'R': hW2R, 'TypeScript': hW2TS,
