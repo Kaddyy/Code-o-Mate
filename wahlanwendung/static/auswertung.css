@@ -9,7 +9,7 @@
     margin-top: 3em;
 }
 
-/* Container für beide PieCharts */
+/* CONTAINER FUER BEIDE PIECHARTS */
 .piechartOuterContainer {
    width: 62.5em;
    margin: auto;
@@ -19,6 +19,7 @@
    align-items: center;
 }
 
+/* PIECHART EINZELAUSWERTUNG */
 .piechartContainerIndividuell {
     border-radius: 20px;
     background-color: #242424 ;
@@ -33,6 +34,7 @@
     margin-top: -2em;
 }
 
+/* PIECHART GESAMTAUSWERTUNG */
 .piechartContainerGesamt {
     border-radius: 20px;
     background-color: #242424 ;
@@ -48,6 +50,7 @@
     margin-top: -2em;
 }
 
+/* BLOCK MIT INFORMATIONEN UEBER DIE PROGRAMMIERSPRACHEN */
 .SprachenContainer {
     width: 62.5em;
     border-radius: 20px;
@@ -99,187 +102,40 @@
     margin-top: 3em;
 }
 
-.ABAPBtn{
+/* PROGRAMMIERSPRACHEN-KACHELN */
+.SprachenOuterContainerClass{
+   display: inline-block;
+   margin-left: 30em;
+}
+
+.SprachenInnerContainerClass{
+    margin: auto;
+    display: inline-block;
+}
+
+/* PROGRAMMIERSPRACHEN-BUTTONS */
+.SprachenButtonClass{
    background: none;
    border: none;
    padding: 0;
+   cursor: pointer;
+   margin-top: 3em;
+   margin-right: 3em;
 }
 
-.BtnABAP{
+/* PROGRAMMIERSPRACHEN-SVG */
+.ClassSVG{
     width: 150px;
     height: 150px;
 }
 
-.CsharpBtn{
-   background: none;
-   border: none;
-   padding: 0;
-   margin-left: 5%;
+.ClassSVG:hover .KachelHintergrundClass{
+    fill: #9939F9;
+    transition: fill 0.3s ease-in, color 0.3s ease-in;
 }
 
-.BtnCsharp{
-    width: 150px;
-    height: 150px;
-}
-
-.CplusplusBtn{
-   background: none;
-   border: none;
-   padding: 0;
-   margin-left: 5%;
-}
-
-.BtnCplusplus{
-    width: 150px;
-    height: 150px;
-}
-
-.BtnGo{
-   background: none;
-   border: none;
-   padding: 0;
-   margin-left: 5%;
-}
-
-.BtnGo{
-    width: 150px;
-    height: 150px;
-}
-
-.BtnHTMLCSS{
-   background: none;
-   border: none;
-   padding: 0;
-   margin-left: 5%;
-}
-
-.BtnHTMLCSS{
-    width: 150px;
-    height: 150px;
-}
-
-.BtnJava{
-   background: none;
-   border: none;
-   padding: 0;
-}
-
-.BtnJava{
-    width: 150px;
-    height: 150px;
-}
-
-.BtnJavaScript{
-   background: none;
-   border: none;
-   padding: 0;
-   margin-left: 5%;
-}
-
-.BtnJavaScript{
-    width: 150px;
-    height: 150px;
-}
-
-.BtnKotlin{
-   background: none;
-   border: none;
-   padding: 0;
-   margin-left: 5%;
-}
-
-.BtnKotlin{
-    width: 150px;
-    height: 150px;
-}
-
-.BtnMatlab{
-   background: none;
-   border: none;
-   padding: 0;
-   margin-left: 5%;
-}
-
-.BtnMatlab{
-    width: 150px;
-    height: 150px;
-}
-
-.BtnPHP{
-   background: none;
-   border: none;
-   padding: 0;
-   margin-left: 5%;
-}
-
-.BtnPHP{
-    width: 150px;
-    height: 150px;
-}
-
-.BtnPython{
-    background:none;
-    border: none;
-    padding: 0;
-    margin-left:
-}
-
-.BtnPython{
-    width: 150px;
-    height: 150px;
-}
-
-.BtnR{
-    background: none;
-    border: none;
-    padding: 0;
-    margin-left: 5%;
-    width: 150 px;
-    height: 150 px;
-}
-
-.BtnR{
-    width: 150px;
-    height: 150px;
-}
-
-.BtnSQL{
-    background: none;
-    border: none;
-    padding: 0;
-    margin-left: 5%;
-    width: 150 px;
-    height: 150 px;
-}
-
-.BtnSQL{
-    width: 150px;
-    height: 150px;
-}
-
-.BtnSwift{
-    background: none;
-    border: none;
-    padding: 0;
-    margin-left: 5%;
-    cursor: pointer;
-}
-
-.BtnSwift{
-    width: 150px;
-    height: 150px;
-}
-
-.BtnTypeScript{
-    background: none;
-    border: none;
-    padding: 0;
-    margin-left: 5%;
-}
-
-
-.BtnTypeScript{
-    width: 150px;
-    height: 150px;
+.ClassSVG:hover .LogoClass{
+    fill: #FFFFFF;
+    transition: fill 0.3s ease-in, color 0.3s ease-in;
 }
 
