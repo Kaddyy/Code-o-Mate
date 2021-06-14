@@ -109,8 +109,8 @@ def auswertung():
     for i in range(1, sprachenanz):
         erg = db.session.query(progrSpr.absolutes_erg).filter_by(pk_id=i).scalar()
         ges += erg
-       ## print('erg:', i, erg)
-    #15 mal absolutes_erg / gesamt
+
+
     #get gesamter Wert
     gesJava = db.session.query(progrSpr.absolutes_erg).filter_by(sprache='Java').scalar() / ges
     gesPython = db.session.query(progrSpr.absolutes_erg).filter_by(sprache='Python').scalar() / ges
@@ -206,14 +206,9 @@ def auswertung():
     hW2TS = db.session.query(progrSpr.helloWorld).filter_by(sprache='TypeScript').scalar()
     hW2Kotlin = db.session.query(progrSpr.helloWorld).filter_by(sprache='Kotlin').scalar()
     hW2ABAP = db.session.query(progrSpr.helloWorld).filter_by(sprache='ABAP').scalar()
-    #print(hW2Java)
-    print(hW2ABAP)
-    p_ = '<p>Hello World</%p>'
     helloWorlds = {'Java': hW2Java, 'Python': hW2Python, 'Swift': hW2Swift, 'Cplusplus': hW2Cplusplus,
                    'Csharp': hW2Csharp, 'JavaScript': hW2JavaScript, 'Matlab': hW2Matlab, 'Go': hW2Go,
                    'HTMLCSS': hW2HTMLCSS, 'SQL': hW2SQL, 'PHP': hW2PHP, 'R': hW2R, 'TypeScript': hW2TS,
                    'Kotlin': hW2Kotlin, 'ABAP': hW2ABAP}
     return render_template('auswertung.html', individuell=individuell, beschreibungen=beschreibungen, gesamt=gesamt, links=links, links2=links2, helloWorlds=helloWorlds)
 
-
-print("""System.out.println("Hello World");""")

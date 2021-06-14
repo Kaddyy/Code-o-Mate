@@ -51,18 +51,6 @@
 }
 
 /* BLOCK MIT INFORMATIONEN UEBER DIE PROGRAMMIERSPRACHEN */
-.SprachenContainer {
-    width: 62.5em;
-    border-radius: 20px;
-    padding: 8px 12px;
-    background-color: #242424 ;
-    color: #FFFFFF;
-    text-align: left;
-    margin: auto;
-    margin-top:3em;
-    font-family: 'Roboto Condensed', sans-serif;
-}
-
 .Fließtext {
     color: rgba(255,255,255,0.65);
     margin-left: 2.5em;
@@ -123,17 +111,20 @@
    margin-right: 3em;
 }
 
+.SprachenButtonClass:focus .KachelHintergrundClass{
+    fill: #9939F9;
+}
+
+.SprachenButtonClass:focus .LogoClass{
+    fill: #FFFFFF;
+}
+
 /* PROGRAMMIERSPRACHEN-SVG */
 .ClassSVG{
     width: 150px;
     height: 150px;
 }
 
-
-.SprachenButtonClass:focus {
-    fill:green;
-    background: green;
-}
 
 .ClassSVG:hover .KachelHintergrundClass{
     fill: #9939F9;
