@@ -105,7 +105,7 @@
 /* PROGRAMMIERSPRACHEN-KACHELN */
 .SprachenOuterContainerClass{
    display: inline-block;
-   margin-left: 30em;
+   margin-left: 17.5em;
 }
 
 .SprachenInnerContainerClass{
@@ -129,10 +129,17 @@
     height: 150px;
 }
 
+
+.SprachenButtonClass:focus {
+    fill:green;
+    background: green;
+}
+
 .ClassSVG:hover .KachelHintergrundClass{
     fill: #9939F9;
     transition: fill 0.3s ease-in, color 0.3s ease-in;
 }
+
 
 .ClassSVG:hover .LogoClass{
     fill: #FFFFFF;

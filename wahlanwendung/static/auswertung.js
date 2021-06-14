@@ -8,3 +8,11 @@ document.getElementById("testID").addEventListener("click", function() {
         duration: 1
     });
     });
+*/
+
+
+    if (document.querySelector('#testID').clicked == true){
+    document.querySelector("#SprachenContainer").hidden = true;
+    } else{
+    document.querySelector("#aktSpracheContainer").hidden = true;
+    }

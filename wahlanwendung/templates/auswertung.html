@@ -115,19 +115,21 @@ google.charts.setOnLoadCallback(drawChart);
         <div id="piechartGesamt" style="width: 56.25em; height: 15.25em;"></div>
     </div>
 </div>
-
-<div class="SprachenContainer">
+<!--
+<div class="SprachenContainer" id="SprachenContainer">
     <p class="ProgrammierspracheÜberschrift">Du willst mehr über die jeweilige Programmiersprache erfahren?</p>
     <p class="Fließtext">Dann such dir eine der unten verfügbaren Sprachen aus und du wirst hier einige Informationen
         erhalten.</p>
 </div>
+-->
 
 <div class="aktSpracheContainer">
-    <p class="progrSprache" id="progrSprache">Programmiersprache</p>
-    <p class="sprachenBeschreibung" id="sprachenBeschreibung">Beschreibung</p>
-    <p class="helloWorld" id="helloWorld">helloWorld</p>
-    <a href="" id="link1" class="link">Linkilink</a>
-    <a href="" id="link2" class="link">Linkilink2</a>
+    <p class="progrSprache" id="progrSprache">Du willst mehr über die jeweilige Programmiersprache erfahren?</p>
+    <p class="sprachenBeschreibung" id="sprachenBeschreibung">Dann such dir eine der unten verfügbaren Sprachen aus und du wirst hier einige Informationen
+        erhalten.</p>
+    <p class="helloWorld" id="helloWorld"></p>
+    <a href="" id="link1" class="link"></a><br>
+    <a href="" id="link2" class="link"></a>
 </div>
 
 <!-- PROGRAMMIERSPRACHEN BUTTONS  -->
@@ -143,11 +145,11 @@ google.charts.setOnLoadCallback(drawChart);
                       document.getElementById("link2").innerHTML="{{links2.ABAP}}";
                       document.getElementById("link2").href="{{links2.ABAP}}"'>
 
-            <svg version="1.1" class="ClassSVG" id="ABAPIdSVG" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+            <svg version="1.1" class="ClassSVG" tabindex="1" id="ABAPIdSVG" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                  width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100"
                  xml:space="preserve">
 <g>
-	<rect class="KachelHintergrundClass" id="KachelHintergrundID" fill="#242424" width="100" height="100"/>
+	<rect class="KachelHintergrundClass" id="KachelHintergrundID" tabindex="1" fill="#242424" width="100" height="100"/>
     <g>
 		<defs>
 			<rect id="SVGID_1_" width="100" height="100"/>
@@ -821,5 +823,13 @@ google.charts.setOnLoadCallback(drawChart);
     </div>
 
 </div>
+
+<script>
+    if (document.querySelector('#testID').clicked == true){
+        document.querySelector("#SprachenContainer").hidden = true;
+        } else{
+        document.querySelector("#aktSpracheContainer").hidden = true;
+    }
+</script>
 
 {% endblock %}
