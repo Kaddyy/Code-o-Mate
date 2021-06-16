@@ -98,6 +98,7 @@
 .SprachenOuterContainerClass{
    display: inline-block;
    margin-left: 17.5em;
+   white-space: nowrap;
 }
 
 .SprachenInnerContainerClass{

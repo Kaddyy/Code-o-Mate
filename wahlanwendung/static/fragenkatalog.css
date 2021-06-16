@@ -23,7 +23,7 @@
     border-radius: 10px;
     cursor: pointer;
     width: 58.5em;
-    margin-left: -3em;
+    margin-left: -3.5em;
 }
 
 .fragenInnerContainer input[type="radio"]:checked + label {
