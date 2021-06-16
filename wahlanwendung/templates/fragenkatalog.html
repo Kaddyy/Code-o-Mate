@@ -8,32 +8,32 @@
         <div class="fragenInnerContainer">
     <ul id="antwortListe" action="/fragenkatalog" method="post" style="list-style-type: none">
         <li>
-            <input type="radio" name="answer" value="a01_01" id="a01_1" checked>
-            <label for="a01_1" id="label_01">{{ dataAntwort.antwort1 }}</label>
+            <input type="radio" name="answer" value="a01" id="IDa01" checked>
+            <label for="IDa01" id="label_01">{{ dataAntwort.antwort1 }}</label>
         </li>
          <li>
-            <input type="radio" name="answer" value="a01_02" id="a01_2">
-            <label for="a01_2" id="label_02">{{ dataAntwort.antwort2 }}</label>
+            <input type="radio" name="answer" value="a02" id="IDa02">
+            <label for="IDa01" id="label_02">{{ dataAntwort.antwort2 }}</label>
         </li>
         <li id="li_03">
-            <input type="radio" name="answer" value="a01_03" id="a01_3">
-            <label for="a01_3" id="label_03">{{ dataAntwort.antwort3 }}</label>
+            <input type="radio" name="answer" value="a03" id="IDa03">
+            <label for="IDa01" id="label_03">{{ dataAntwort.antwort3 }}</label>
         </li>
         <li id="li_04">
-            <input type="radio" name="answer" value="a01_04" id="a01_4">
-            <label for="a01_4" id="label_04">{{ dataAntwort.antwort4 }}</label>
+            <input type="radio" name="answer" value="a04" id="IDa04">
+            <label for="IDa01" id="label_04">{{ dataAntwort.antwort4 }}</label>
         </li>
     </ul>
             </div>
     </div>
 
     <div class="btnContainer">
-      <button class="weiterBtn" type="submit" id="weiterbtn">Weiter</button>
+      <button class="weiterBtn" type="submit" id="weiterBtnID">Weiter</button>
     </div>
 </form>
 
     <div class="btnContainer">
-        <a href="{{ url_for('auswertung') }}"><button type="button" id="auswertung" class="auswertungsBtn" >Auf geht's zur Auswertung!</button></a>
+        <a href="{{ url_for('auswertung') }}"><button type="button" id="auswertungsBtnID" class="auswertungsBtn" >Auf geht's zur Auswertung!</button></a>
     </div>
 
 <script src="{{ url_for('static', filename ='fragenkatalog.js') }}"></script>

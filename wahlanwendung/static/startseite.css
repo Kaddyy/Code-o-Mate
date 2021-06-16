@@ -1,7 +1,7 @@
-.willkommenstext {
+.willkommenstextContainer {
     width: 62.5em;
-    border-radius: 20px;
-    padding: 8px 12px;
+    border-radius: 1.25em;
+    padding: 0.5em 0.75em;
     background-color: #242424;
     text-align: left;
     margin: auto;
@@ -26,11 +26,11 @@
 .btn {
     display: inline-block;
     text-align: center;
-    width: 200px;
-    padding: 10px;
+    width: 12.5em;
+    padding: 0.625em;
     background-color: #242424;
     border-color: #9939F9;
-    border-radius: 10px;
+    border-radius: 0.625em;
     margin-top: -1.25em;
     font-family: 'Roboto Condensed', sans-serif;
     color: #FFFFFF;

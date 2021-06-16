@@ -1,40 +1,22 @@
-   whatauchimmer = document.querySelector("#label_03").innerText;
-    if (whatauchimmer == "None") {
+//Radio Buttons nicht anzeigen, wenn nicht gebraucht
+   radio3Inhalt = document.querySelector("#label_03").innerText;
+    if (radio3Inhalt == "None") {
     document.querySelector("#label_03").hidden = true;
-    document.querySelector("#a01_3").hidden = true;
+    document.querySelector("#IDa03").hidden = true;
     document.querySelector("#li_03").hidden = true;
     }
 
-    whatauchimmer2 = document.querySelector("#label_04").innerText;
-    if (whatauchimmer2 == "None") {
+    radio4Inhalt = document.querySelector("#label_04").innerText;
+    if (radio4Inhalt == "None") {
     document.querySelector("#label_04").hidden = true;
-    document.querySelector("#a01_4").hidden = true;
+    document.querySelector("#IDa04").hidden = true;
     document.querySelector("#li_04").hidden = true;
     }
 
     letzteFrage = document.querySelector("#frage").innerText;
-    if (letzteFrage != "Hast du Interesse daran Roboter zu programmieren?"){
-    document.querySelector("#auswertung").className = "hiddenBtn";
+    if (letzteFrage != "Hast du Interesse an der Roboterprogrammierung?"){
+    document.querySelector("#auswertungsBtnID").className = "hiddenBtn";
     } else{
-    document.querySelector("#weiterbtn").className = "hiddenBtn";
+    document.querySelector("#weiterBtnID").className = "hiddenBtn";
     }
 
-/*
-    letzteFrage = document.querySelector("#frage").innerText;
-    if (letzteFrage != "Hast du Interesse daran Roboter zu programmieren?"){
-    document.querySelector("#auswertung").hidden = true;
-    } else{
-    document.querySelector("#weiterbtn").hidden = true;
-    }
-*/
-
-/*function checkTonio(){
-    //checkAnswer3 = antworten.antwort3;
-    document.querySelector("#label_03").innerText = element;
-    if (element == "Ulla"){
-        document.querySelector("#label_03").innerText = 'Tonio';
-        //document.getElementById('optAnswer3').style.display = "none";
-    } else {
-        document.querySelector("#label_03").innerText = "Kaddy";
-    }
-}*/

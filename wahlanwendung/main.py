@@ -1,10 +1,8 @@
-from flask import render_template, request, session, redirect, url_for
+from flask import render_template, request, redirect, url_for
 from wahlanwendung import app, db
 from wahlanwendung.models import fragenkat, antwortkat, progrSpr
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import select, null, update
 
-SPRACHE_HTML_CSS__SCALAR = db.session.query(progrSpr.helloWorld).filter_by(sprache='HTML/CSS').scalar()
+
 
 counterJava = 0
 counterPython = 0
@@ -30,14 +28,12 @@ def welcome():
 def fragenkatalog(fragennr):
     fragennummer = fragennr
     if request.method== 'GET':
-        #ABBRUCH: if fragennr = 22 dann hide weiter button
-        fraage = db.session.query(fragenkat.frage).filter_by(pk_frage_id=fragennummer).scalar()
-        dataFrage = {'frage': fraage}
+        aktFrage = db.session.query(fragenkat.frage).filter_by(pk_frage_id=fragennummer).scalar()
+        dataFrage = {'frage': aktFrage}
         antwort1 = db.session.query(fragenkat.antwort1).filter_by(pk_frage_id=fragennummer).scalar()
         antwort2 = db.session.query(fragenkat.antwort2).filter_by(pk_frage_id=fragennummer).scalar()
         antwort3 = db.session.query(fragenkat.antwort3).filter_by(pk_frage_id=fragennummer).scalar()
         antwort4 = db.session.query(fragenkat.antwort4).filter_by(pk_frage_id=fragennummer).scalar()
-        # if antwort 3 is null hide sö radios
         dataAntwort = {'antwort1': antwort1, 'antwort2': antwort2, 'antwort3': antwort3, 'antwort4': antwort4}
         return render_template('fragenkatalog.html', dataFrage=dataFrage, dataAntwort=dataAntwort)
     else:
@@ -73,8 +69,8 @@ def fragenkatalog(fragennr):
             counterKotlin += db.session.query(antwortkat.kotlin).filter_by(fragennummer=fragennr, antwort=answer).scalar()
             global counterABAP
             counterABAP += db.session.query(antwortkat.abap).filter_by(fragennummer=fragennr, antwort=answer).scalar()
-            #print('C++: ', counterCplusplus)
-            if answer == 'a01_02':
+            # Je nach Antwort, ggf. Frage überspringen
+            if answer == 'a02':
                 nachfolger = db.session.query(fragenkat.nachfolger).filter_by(pk_frage_id=fragennummer).scalar()
                 if (nachfolger != 0):
                     fragennr += nachfolger
@@ -85,7 +81,7 @@ def fragenkatalog(fragennr):
 
 @app.route('/auswertung')
 def auswertung():
-    # hier Daten in DB
+    # In Datenbank Ergebnis zum Gesamtergebnis aller Code-o-Mater hinzufügen
     db.session.query(progrSpr).filter_by(sprache='Java').update({progrSpr.absolutes_erg: progrSpr.absolutes_erg + counterJava}, synchronize_session=False)
     db.session.query(progrSpr).filter_by(sprache='Python').update({progrSpr.absolutes_erg: progrSpr.absolutes_erg + counterPython}, synchronize_session=False)
     db.session.query(progrSpr).filter_by(sprache='Swift').update({progrSpr.absolutes_erg: progrSpr.absolutes_erg + counterSwift}, synchronize_session=False)
@@ -103,13 +99,12 @@ def auswertung():
     db.session.query(progrSpr).filter_by(sprache='ABAP').update({progrSpr.absolutes_erg: progrSpr.absolutes_erg + counterABAP}, synchronize_session=False)
     db.session.commit()
     individuell = {'Java': counterJava, 'Python':counterPython, 'Swift':counterSwift, 'Cplusplus':counterCplusplus, 'Csharp':counterCsharp, 'JavaScript':counterJavascript, 'Matlab':counterMatlab, 'Go':counterGo, 'HTMLCSS':counterHTMLCSS, 'SQL':counterSQL, 'PHP':counterPHP, 'R':counterR, 'TypeScript':counterTypescript, 'Kotlin':counterKotlin, 'ABAP':counterABAP}
-    #gesamt = query alles zusammen zählen
+
     ges = 0
     sprachenanz = db.session.query(progrSpr).count() + 1
     for i in range(1, sprachenanz):
         erg = db.session.query(progrSpr.absolutes_erg).filter_by(pk_id=i).scalar()
         ges += erg
-
 
     #get gesamter Wert
     gesJava = db.session.query(progrSpr.absolutes_erg).filter_by(sprache='Java').scalar() / ges
@@ -128,6 +123,7 @@ def auswertung():
     gesKotlin = db.session.query(progrSpr.absolutes_erg).filter_by(sprache='Kotlin').scalar() / ges
     gesABAP = db.session.query(progrSpr.absolutes_erg).filter_by(sprache='ABAP').scalar() / ges
     gesamt = {'Java': gesJava, 'Python':gesPython, 'Swift':gesSwift, 'Cplusplus':gesCplusplus, 'Csharp':gesCsharp, 'JavaScript':gesJavaScript, 'Matlab':gesMatlab, 'Go':gesGo, 'HTMLCSS':gesHTMLCSS, 'SQL':gesSQL, 'PHP':gesPHP, 'R':gesR, 'TypeScript':gesTS, 'Kotlin':gesKotlin, 'ABAP':gesABAP}
+
 
     #get Beschreibungen
     beschrJava = db.session.query(progrSpr.beschreibung).filter_by(sprache='Java').scalar()
@@ -170,6 +166,7 @@ def auswertung():
              'Csharp': linkCsharp, 'JavaScript': linkJavaScript, 'Matlab': linkMatlab, 'Go': linkGo,
              'HTMLCSS': linkHTMLCSS, 'SQL': linkSQL, 'PHP': linkPHP, 'R': linkR, 'TypeScript': linkTS,
              'Kotlin': linkKotlin, 'ABAP': linkABAP}
+
     # get link2
     link2Java = db.session.query(progrSpr.link2).filter_by(sprache='Java').scalar()
     link2Python = db.session.query(progrSpr.link2).filter_by(sprache='Python').scalar()
@@ -190,6 +187,7 @@ def auswertung():
               'Csharp': link2Csharp, 'JavaScript': link2JavaScript, 'Matlab': link2Matlab, 'Go': link2Go,
               'HTMLCSS': link2HTMLCSS, 'SQL': link2SQL, 'PHP': link2PHP, 'R': link2R, 'TypeScript': link2TS,
               'Kotlin': link2Kotlin, 'ABAP': link2ABAP}
+
     # get hello Worlds
     hW2Java = db.session.query(progrSpr.helloWorld).filter_by(sprache='Java').scalar()
     hW2Python = db.session.query(progrSpr.helloWorld).filter_by(sprache='Python').scalar()
