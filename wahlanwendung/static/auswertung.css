@@ -96,14 +96,14 @@
 
 /* PROGRAMMIERSPRACHEN-KACHELN */
 .SprachenOuterContainerClass{
-   display: inline-block;
-   margin-left: 17.5em;
-   white-space: nowrap;
+    margin: auto;
+    width: 62.5em;
+    white-space: nowrap;
 }
 
 .SprachenInnerContainerClass{
-    margin: auto;
-    display: inline-block;
+    display: block;
+    margin-left: 3em;
 }
 
 /* PROGRAMMIERSPRACHEN-BUTTONS */
@@ -129,7 +129,6 @@
     width: 150px;
     height: 150px;
 }
-
 
 .ClassSVG:hover .KachelHintergrundClass{
     fill: #9939F9;
