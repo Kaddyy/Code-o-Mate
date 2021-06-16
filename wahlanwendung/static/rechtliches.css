@@ -1,0 +1,11 @@
+.DisclaimerContainer {
+    width: 62.5em;
+    border-radius: 1.25em;
+    padding: 0.5em 0.75em;
+    background-color: #242424;
+    text-align: left;
+    margin: auto;
+    margin-top: 3em;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #FFFFFF;
+}

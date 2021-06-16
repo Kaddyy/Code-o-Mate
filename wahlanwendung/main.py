@@ -210,3 +210,6 @@ def auswertung():
                    'Kotlin': hW2Kotlin, 'ABAP': hW2ABAP}
     return render_template('auswertung.html', individuell=individuell, beschreibungen=beschreibungen, gesamt=gesamt, links=links, links2=links2, helloWorlds=helloWorlds)
 
+@app.route('/rechtliches')
+def rechtliches():
+    return render_template('rechtliches.html')
